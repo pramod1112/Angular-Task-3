@@ -1,0 +1,24 @@
+<div class="row mt-2">
+  <div class="col-sm-5">
+    <form class="card-border">
+      <h2>Add Section</h2>
+      <div class="form-group">
+        <label for="sectionHeader" class="d-block">Section Header</label>
+        <input type="text" class="form-control" id="sectionHeader" #sectionHeader>
+      </div>
+      <div class="form-group">
+        <label for="sectionDetails" class="d-block">Section Details</label>
+        <textarea class="form-control" id="sectionDetails" rows="3" #sectionDetails></textarea>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" (click)="addNewSection()">Add</button>
+    </form>
+
+  </div>
+  <div class="col-sm-7">
+    <p-accordion *ngFor="let sec of sectionList">
+      <p-accordionTab class="accordion-heading" header="{{sec.header}}">
+        <p class="accordion-content">{{sec.sectionDetails}}</p>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { SectionService } from '../services/section.service';
+import { SectionService } from '../shared/services/section.service';
 import { SectionModel } from '../shared/model/sectionList.model';
 
 @Component({
@@ -31,7 +31,6 @@ export class AccordionSectionComponent implements OnInit {
 
   addNewSection() {
     let newSectionObj = new SectionModel(this.headers.nativeElement.value, this.sectionDetails.nativeElement.value);
-    console.log(newSectionObj)
     this.sectionServ.setSectionList(newSectionObj)
     this.headers.nativeElement.value = this.sectionDetails.nativeElement.value = '';
   }
